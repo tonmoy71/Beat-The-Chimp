@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.fahad.beatthechimp.R;
 import com.fahad.beatthechimp.model.Data;
+import com.fahad.beatthechimp.utility.Constant;
+
 import java.util.List;
 
 /**
@@ -17,7 +19,7 @@ import java.util.List;
 public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
   private Context gridContext;
-  private Data dataGrid = new Data(12);
+  private Data dataGrid = new Data(Constant.Difficulty.LEVEL_ONE);
   private List<String> number = dataGrid.getGrid();
   private OnItemClickListener clickListener;
 
@@ -45,7 +47,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
   @Override public void onBindViewHolder(GridAdapter.ViewHolder holder, int position) {
     String num = number.get(position);
     Integer flag = Integer.parseInt(num);
-    if (flag != -10) {
+    if (flag != Constant.Value.INF) {
       TextView textView = holder.numberTextView;
       textView.setText(num);
     } else {

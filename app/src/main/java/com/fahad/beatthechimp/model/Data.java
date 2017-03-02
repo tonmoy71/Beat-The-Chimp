@@ -1,5 +1,7 @@
 package com.fahad.beatthechimp.model;
 
+import com.fahad.beatthechimp.utility.Constant;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,8 +14,8 @@ import java.util.Random;
 public class Data {
 
     private int size;
-    private List<String> Grid = new ArrayList<String>(Collections.nCopies(49, "-10"));
-    private List<Integer> Index = new ArrayList<>(49);
+    private List<String> Grid = new ArrayList<String>(Collections.nCopies(Constant.Value.GRID_SIZE, "-10"));
+    private List<Integer> Index = new ArrayList<>(Constant.Value.GRID_SIZE);
 
 
 
@@ -34,7 +36,7 @@ public class Data {
 
     private void initGrid(int size){
         List<Integer> Value = RandomList(size);
-        Index = RandomList(49);
+        Index = RandomList(Constant.Value.GRID_SIZE);
 
         for(int i = 0 ; i < Value.size(); i++){
             Grid.set(Index.get(i), Value.get(i).toString() );
