@@ -8,6 +8,7 @@ public class Constant {
     public static class Value{
         public static final int GRID_SIZE = 49;
         public static final int INF = -10;
+        public static final String INFS = "-10";
     }
 
     public static class Difficulty{
