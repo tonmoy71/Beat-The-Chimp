@@ -18,9 +18,8 @@ public class Data {
     private List<Integer> Index = new ArrayList<>(Constant.Value.GRID_SIZE);
 
 
-
-    private void initIndex(){
-        for(int i = 0 ; i < Index.size() ; i++ ){
+    private void initIndex() {
+        for (int i = 0; i < Index.size(); i++) {
             Index.add(i);
         }
     }
@@ -29,32 +28,32 @@ public class Data {
         return Grid;
     }
 
-    public Data(int size){
+    public Data(int size) {
         this.size = size;
         initIndex();
         initGrid(size);
     }
 
-    private void initGrid(int size){
+    private void initGrid(int size) {
         List<Integer> Value = RandomList(size);
         Index = RandomList(Constant.Value.GRID_SIZE);
 
-        for(int i = 0 ; i < Value.size(); i++){
-            Grid.set(Index.get(i), Value.get(i).toString() );
+        for (int i = 0; i < Value.size(); i++) {
+            Grid.set(Index.get(i), Value.get(i).toString());
         }
 
     }
 
 
-    public List<Integer> RandomList(int sz){
+    public List<Integer> RandomList(int sz) {
         List<Integer> list = new ArrayList<Integer>(sz);
         List<Integer> store = new ArrayList<Integer>(sz);
-        for(int i = 1; i <= sz; i++) {
+        for (int i = 1; i <= sz; i++) {
             list.add(i);
         }
 
         Random random = new Random();
-        while(list.size() > 0) {
+        while (list.size() > 0) {
             int index = random.nextInt(list.size());
             store.add(list.remove(index));
         }
