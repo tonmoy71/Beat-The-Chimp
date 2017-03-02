@@ -37,11 +37,10 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     public void onClick(View view, int position, String value) {
 
         if (counter == Integer.parseInt(value)) {
-            view.setVisibility(View.GONE);
-            view.setClickable(false);
             Toast.makeText(this, "Position: " + position + " Value: " + value, Toast.LENGTH_SHORT).show();
             counter++;
-            //gridAdapter.notifyDataSetChanged();
+            gridAdapter.setDataSet(position, Constant.Value.INFS);
+            gridAdapter.notifyDataSetChanged();
         } else if (Integer.parseInt(value) == Constant.Value.INF) {
             Toast.makeText(this, "Click on a cell", Toast.LENGTH_SHORT).show();
         }

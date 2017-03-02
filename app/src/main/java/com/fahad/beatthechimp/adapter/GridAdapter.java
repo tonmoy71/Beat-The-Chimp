@@ -33,7 +33,11 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         this.clickListener = onItemClickListener;
     }
 
-    private Context getContext() {
+    public void setDataSet(int position, String value){
+        number.set(position, value);
+    }
+
+    public Context getContext() {
         return gridContext;
     }
 
