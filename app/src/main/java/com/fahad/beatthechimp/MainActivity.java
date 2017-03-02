@@ -12,6 +12,7 @@ import com.fahad.beatthechimp.adapter.OnItemClickListener;
 public class MainActivity extends AppCompatActivity implements OnItemClickListener {
 
   private static final String TAG = MainActivity.class.getSimpleName();
+  private int counter = 1;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -26,7 +27,13 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     gridAdapter.setOnItemClickListener(this);
   }
 
-  @Override public void onClick(View view, int position) {
-    Toast.makeText(this, "Position: " + position, Toast.LENGTH_SHORT).show();
+  @Override public void onClick(View view, int position, String value) {
+    if(counter == Integer.parseInt(value)){
+      Toast.makeText(this, "Position: " + position+" Value: "+value, Toast.LENGTH_SHORT).show();
+      ++counter;
+    }
+    else{
+      Toast.makeText(this, "Wrong Order", Toast.LENGTH_SHORT).show();
+    }
   }
 }

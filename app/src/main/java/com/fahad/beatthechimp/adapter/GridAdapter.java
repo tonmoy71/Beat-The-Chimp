@@ -76,7 +76,8 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     @Override public void onClick(View v) {
       int position = getLayoutPosition();
       if (position != RecyclerView.NO_POSITION) {
-        clickListener.onClick(v, position);
+        String num = number.get(position);
+        clickListener.onClick(v, position, num);
       }
     }
   }
