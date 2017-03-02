@@ -35,6 +35,8 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
     public void setDataSet(int position, String value){
         number.set(position, value);
+        notifyItemChanged(position);
+        //notifyDataSetChanged();
     }
 
     public Context getContext() {
@@ -60,7 +62,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
             textView.setText(num);
         } else {
             TextView textView = holder.numberTextView;
-            textView.setVisibility(View.GONE);
+            textView.setVisibility(View.INVISIBLE);
             textView.setClickable(false);
         }
     }

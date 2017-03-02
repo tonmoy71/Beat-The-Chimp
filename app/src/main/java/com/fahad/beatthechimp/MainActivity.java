@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             Toast.makeText(this, "Position: " + position + " Value: " + value, Toast.LENGTH_SHORT).show();
             counter++;
             gridAdapter.setDataSet(position, Constant.Value.INFS);
-            gridAdapter.notifyDataSetChanged();
         } else if (Integer.parseInt(value) == Constant.Value.INF) {
             Toast.makeText(this, "Click on a cell", Toast.LENGTH_SHORT).show();
         }
@@ -48,7 +47,10 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             Toast.makeText(this, "Position: " + position + " Wrong Order", Toast.LENGTH_SHORT).show();
         }
         if (Integer.parseInt(value) == Constant.Difficulty.LEVEL_ONE) {
-            Toast.makeText(this, "Congratulation!", Toast.LENGTH_SHORT).show();
+            if(counter == Integer.parseInt(value)){
+                Toast.makeText(this, "Congratulation!", Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
 }
