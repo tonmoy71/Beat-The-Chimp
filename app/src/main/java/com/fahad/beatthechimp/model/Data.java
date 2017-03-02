@@ -54,10 +54,22 @@ public class Data {
         }
 
         Random random = new Random();
-        while (list.size() > 0) {
-            int index = random.nextInt(list.size());
-            store.add(list.remove(index));
+        for(int i = 0; i < sz; i++){
+            while(true) {
+                int num = random.nextInt(sz) + 1;
+                if (store.contains(num) == false) {
+                    store.add(num);
+                    //System.out.println(num);
+                    break;
+                }
+            }
         }
+
+//        Random random = new Random();
+//        while (list.size() > 0) {
+//            int index = random.nextInt(list.size());
+//            store.add(list.remove(index));
+//        }
         return store;
     }
 }

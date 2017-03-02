@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     @Override
     public void onClick(View view, int position, String value) {
 
+        if(value.equals("1")){
+            gridAdapter.setState(false);
+        }
         if (counter == Integer.parseInt(value)) {
             Toast.makeText(this, "Position: " + position + " Value: " + value, Toast.LENGTH_SHORT).show();
             counter++;
