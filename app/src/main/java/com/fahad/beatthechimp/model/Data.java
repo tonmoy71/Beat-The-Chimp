@@ -31,6 +31,7 @@ public class Data {
 
     public Data(int size){
         this.size = size;
+        initIndex();
         initGrid(size);
     }
 
