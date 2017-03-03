@@ -1,4 +1,4 @@
-package com.fahad.beatthechimp;
+package com.fahad.beatthechimp.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.fahad.beatthechimp.R;
 import com.fahad.beatthechimp.adapter.GridAdapter;
 import com.fahad.beatthechimp.adapter.OnItemClickListener;
 import com.fahad.beatthechimp.model.Data;
