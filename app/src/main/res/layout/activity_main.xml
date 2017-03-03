@@ -11,6 +11,7 @@
     tools:context="com.fahad.beatthechimp.activity.MainActivity">
 
     <android.support.v7.widget.RecyclerView
+
         android:id="@+id/numbergrid"
         android:layout_marginTop="70dp"
         android:layout_width="match_parent"
